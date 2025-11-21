@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ourmenu.css">
+    <title>Our Menu</title>
+</head>
+<body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-logo">
+          <a href="index.html"> <img src="./assets/restaurant-logo (2).png" alt="shop-logo"
+            class="shop-logo" /></a>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ourmenu.html">Our Menu</a></li>
+            <li><a href="combo.html">Our Offers</a></li>
+            <li><a href="about.html">Know us More</a></li>
+            <li><a href="order.html">Your Order</a></li>
+            <li><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></li>
+          </ul>
+          <div class="login">
+            <a href="login.html">Login/signup</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <section class="menu-heading">
+      <h3 class="overlay">Our Menu</h3>
+    </section>
+
+    <!-- search section -->
+    <section class="categories-btn">
+      <input class="search-input" placeholder="What do you want to search..." />
+      <div class="button-group">
+          <div>
+            <a href="#search-items"><button class="active">All</button></a>
+          </div>
+          <div>
+            <a href="#beverages"><button>Beverages</button></a>
+          </div>
+          <div>
+            <a href="#main-course"><button>Main Course</button></a>
+          </div>
+          <div>
+            <a href="#trending"><button>Trending</button></a>
+          </div>
+          <div>
+            <a href="#combo"><button>Offers</button></a>
+          </div>
+      </div>
+    </section>
+
+    <!-- menu section -->
+    <section>
+      <div class="ourmenu-category" id="search-items">
+        <div class="ourmenu-items">
+          <!-- put searched items here dynamically -->
+        </div>
+      </div>
+
+      <!-- best seller -->
+      <div class="ourmenu-category" id="bestSellers">
+        <div class="ourmenu-category-header">
+          <h3>Best Seller</h3>
+        </div>
+        <div class="ourmenu-items">
+          <!-- Fetch dynamically -->
+        </div>
+      </div>
+      <!-- Trending -->
+      <div class="ourmenu-category" id="trending">
+        <div class="ourmenu-category-header">
+          <h3>Trending</h3>
+        </div>
+        <div class="ourmenu-items">
+          <!-- Fetch dynamically -->
+        </div>
+      </div>
+
+      <!-- starter -->
+      <div class="ourmenu-category" id="starter">
+        <div class="ourmenu-category-header">
+          <h3>Starter</h3>
+        </div>
+        <div class="ourmenu-items">
+          <!-- Fetch dynamically -->
+        </div>
+      </div>
+
+      <!-- Beverages -->
+      <div class="ourmenu-category" id="beverages">
+        <div class="ourmenu-category-header">
+          <h3 id="beverages">Beverages</h3>
+        </div>
+        <div class="ourmenu-items">
+          <!-- Fetch dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Course -->
+    <div class="ourmenu-category" id="main-course">
+      <div class="ourmenu-category-header">
+        <h3 id="main-course">Main Course</h3>
+      </div>
+      <div class="ourmenu-items">
+        <!-- Fetch dynamically -->
+      </div>
+    </div>
+
+     <!-- combo -->
+    <div class="ourmenu-category" id="combo">
+      <div class="ourmenu-category-header">
+        <h3 id="main-course">Combo Offers</h3>
+      </div>
+      <div class="ourmenu-items">
+        <!-- Fetch dynamically -->
+      </div>
+    </div>
+
+    <!-- Product Detail Popup -->
+    <div id="product-popup" class="popup-overlay">
+      <div class="popup-box">
+        <span class="popup-close">&times;</span>
+        <div id="popup-details"></div>
+      </div>
+    </div>
+   
+    <!-- Javascript Code -->
+    <script src="cartUtils.js"></script>
+    <script src="ourmenu.js"></script>
+
+</body>
+</html>

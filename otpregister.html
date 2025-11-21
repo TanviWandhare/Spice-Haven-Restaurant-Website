@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Registration</title>
+  <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <a href="index.html"> <img src="./assets/restaurant-logo (2).png" alt="shop-logo"
+            class="shop-logo" /></a>
+      </div>
+    </nav>
+  </header>
+  <div class="form-container">
+    <form class="otp-form login-form">
+      <h2>OTP Verification</h2>
+      <p class="otp-instruction">Enter the 4-digit OTP sent to your registered mobile number.</p>
+
+      <div class="otp-inputs">
+        <input type="text" class="otp-input" pattern="[0-9]*" inputmode="numeric" maxlength="1" required>
+        <input type="text" class="otp-input" pattern="[0-9]*" inputmode="numeric" maxlength="1" required>
+        <input type="text" class="otp-input" pattern="[0-9]*" inputmode="numeric" maxlength="1" required>
+        <input type="text" class="otp-input" pattern="[0-9]*" inputmode="numeric" maxlength="1" required>
+      </div>
+
+      <p class="resend-info">
+        Didn't receive the OTP?
+        <a href="#" class="resend-link" id="resendOtp">Resend OTP</a>
+      </p>
+
+      <button type="submit">Verify</button>
+    </form>
+  </div>
+
+  <script>
+    const otpInputs = document.querySelectorAll('.otp-input');
+    console.log(otpInputs);
+
+    otpInputs.forEach((inputNode, index) => {
+      inputNode.addEventListener('input', () => {
+       
+        if(inputNode.value.length === 1 && index < otpInputs.length-1){
+          console.log("moving to next input");
+          otpInputs[index + 1].focus();
+        }
+      });
+
+      inputNode.addEventListener('keydown', (e)=>{
+        if(e.key === 'Backspace' && inputNode.value.length === 0 && index > 0){
+          console.log("moving to previous input");
+          otpInputs[index - 1].focus();
+        }
+      })
+    })
+
+    //resend info
+    document.getElementById("resendOtp").addEventListener("click", function (e) {
+    e.preventDefault(); 
+    alert("✅ OTP has been sent to your registered number!");
+  });
+  </script>
+</body>
+</html>

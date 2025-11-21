@@ -1,0 +1,162 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="order.css" />
+  </head>
+  <body>
+    <header>
+        <!-- Nav Bar -->
+        <nav>
+          <div class="nav-logo">
+            <a href="index.html"> <img src="./assets/restaurant-logo (2).png" alt="shop-logo"
+            class="shop-logo" /></a>
+          </div>
+          <!-- Hamburger Icon -->
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="nav-right">
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="ourmenu.html">Our Menu</a></li>
+              <li><a href="combo.html">Our Offers</a></li>
+              <li><a href="about.html">Know us More</a></li>
+              <li><a href="order.html">Your Order</a></li>
+              <li><a href="cart.html">Cart (0)</a></li>
+            </ul>
+            <div class="login">
+              <a href="signup.html">Login/Signup</a>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+    <!-- Order Section -->
+    <section class="order-section">
+      <h1 class="order-title">Your Order</h1>
+      <!-- Table -->
+      <table class="order-table">
+        <thead class="order-table-head">
+          <tr>
+            <th class="order-table-head-cell">Order No.</th>
+            <th class="order-table-head-cell">Order details</th>
+            <th class="order-table-head-cell">Total Price</th>
+            <th class="order-table-head-cell">Status</th>
+          </tr>
+        </thead>
+        <tbody id="order-table-body">
+          <!--  dynamically add table rows -->
+        </tbody>
+      </table>
+      <!-- Order Cards -->
+      <div id="order-cards" class="order-cards-container">
+        <!-- Order cards will be dynamically added here -->
+      </div>
+    </section>
+
+    <script>
+      // Sample order data
+      const orders = [
+        {
+          id: 1,
+          items: [
+            { name: "Breakfast Combo", quantity: 2 },
+            { name: "Cold Coffee", quantity: 1 },
+          ],
+          totalPrice: 25.99,
+          status: "Delivered",
+        },
+        {
+          id: 2,
+          items: [{ name: "South Indian Combo", quantity: 1 }],
+          totalPrice: 17.49,
+          status: "In Transit",
+        },
+        {
+          id: 3,
+          items: [
+            { name: "Orange Juice", quantity: 3 },
+            { name: "Burger", quantity: 2 },
+          ],
+          totalPrice: 18.99,
+          status: "Pending",
+        },
+      ];
+
+      // Function to create order card
+      function createOrderCard(order) {
+        // items loop
+        const itemsHtml = order.items
+          .map(
+            (item) => `
+          <div class="order-details-item">
+            <span>${item.name}</span>
+            <span>x${item.quantity}</span>
+          </div>
+        `
+          )
+          .join("");
+
+        // card template
+        const orderHtml = `
+          <div class="order-card">
+            <div class="order-header">
+              <span class="order-number">Order #${order.id}</span>
+            </div>
+            <div class="order-details">
+              ${itemsHtml}
+            </div>
+            <div class="order-total">Total: $${order.totalPrice}</div>
+            <span class="order-status status-${order.status
+              .toLowerCase()
+              .replace(" ", "-")}">
+              ${order.status}
+            </span>
+          </div>
+        `;
+
+        const orderCard = document.createElement("div");
+        orderCard.innerHTML = orderHtml;
+        return orderCard.firstElementChild; // actual card return
+      }
+
+      // render orders
+      const ordercardsContainer = document.getElementById("order-cards");
+      if (orders.length > 0) {
+        orders.forEach((order) => {
+          const orderCard = createOrderCard(order);
+          ordercardsContainer.appendChild(orderCard);
+        });
+      } else {
+        const noOrdersMessage = document.createElement("p");
+        noOrdersMessage.textContent = "No orders yet.";
+        ordercardsContainer.appendChild(noOrdersMessage);
+      }
+
+      // hamburger menu
+      document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.querySelector(".hamburger");
+      const navRight = document.querySelector(".nav-right");
+
+      hamburger.addEventListener("click", () => {
+      navRight.classList.toggle("active");
+     });
+    });
+
+  // for product details
+  document.addEventListener("click", ()=>{
+    const cards = document.querySelector(".ourmenu-items");
+    cards.window.href = `productDetail.html?id=${items.id}`;
+  })
+  
+</script>
+</body>
+</html>
+
+

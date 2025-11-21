@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ourmenu.css">
+    <title>Combo Offers</title>
+</head>
+<body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-logo">
+          <a href="index.html"> <img src="./assets/restaurant-logo (2).png" alt="shop-logo"
+            class="shop-logo" /></a>
+        </div>
+        <!-- Hamburger Icon -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ourmenu.html">Our Menu</a></li>
+            <li><a href="combo.html">Our Offers</a></li>
+            <li><a href="about.html">Know us More</a></li>
+            <li><a href="order.html">Your Order</a></li>
+            <li><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></li>
+          </ul>
+          <div class="login">
+            <a href="login.html">Login/signup</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <section class="menu-heading">
+      <h3 class="overlay">Combo Offers</h3>
+    </section>
+
+    <!-- combo -->
+    <div class="ourmenu-category" id="combo">
+      <div class="ourmenu-category-header">
+        <h3>Combo Offers</h3>
+      </div>
+      <div class="ourmenu-items">
+        <!-- fetch dynamically -->
+      </div>
+    </div>
+
+    <!-- Product Detail Popup -->
+    <div id="product-popup" class="popup-overlay">
+      <div class="popup-box">
+        <span class="popup-close">&times;</span>
+        <div id="popup-details"></div>
+      </div>
+    </div>
+   
+    <!-- Javascript Code -->
+    <script src="cartUtils.js"></script>
+    <script src="ourmenu.js"></script>
+    <script src="cart.js"></script>
+   
+</body>
+</html>
