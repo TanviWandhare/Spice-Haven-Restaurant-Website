@@ -54,7 +54,7 @@ It allows users to explore delicious dishes, search food items dynamically, view
 ## 🧩 Tech Stack
 - **Frontend:** HTML5, CSS3, JavaScript (ES6)
 - **Data Source:** foodItems.json (local dynamic fetch)
-- **Storage:** Browser sessionStorage for cart management
+- **Storage:** Browser localStorage for cart management
 
 ---
 
