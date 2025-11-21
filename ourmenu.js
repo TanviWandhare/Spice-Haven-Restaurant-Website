@@ -5,7 +5,12 @@ let foodItems = [];
 // Update cart count on page load
 document.addEventListener("DOMContentLoaded", () => {
   updateCartCount();
-  const isHomePage = document.title === "Home Page";
+  
+  const currentPage = location.pathname.split("/").pop();
+  const isHomePage =
+    currentPage === "" ||          
+    currentPage === "index.html";  
+
   if (isHomePage) {
     fetchHomeItems(); //for homepage
   } else {
